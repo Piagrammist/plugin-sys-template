@@ -1,0 +1,5 @@
+{
+    "require": {
+        "piagrammist/plugin-sys": "dev-master"
+    }
+}

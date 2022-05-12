@@ -1,0 +1,8 @@
+.idea/
+.vscode/
+
+vendor/
+composer.lock
+
+src/session/
+src/MadelineProto.log
