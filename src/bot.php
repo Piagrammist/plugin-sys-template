@@ -7,15 +7,12 @@ use Piagrammist\PluginSys\Robot;
 use function Piagrammist\PluginSys\path;
 
 
-if (is_file(__DIR__.'/../vendor/autoload.php')) {
-    require __DIR__.'/../vendor/autoload.php';
+if (is_file(__DIR__.'/../plugin-sys.phar')) {
+    require __DIR__.'/../plugin-sys.phar';
 } else {
-    if (!is_file('madeline.php')) {
-        copy('https://phar.madelineproto.xyz/madeline.php', 'madeline.php');
-    }
-    require 'madeline.php';
+    require __DIR__.'/../vendor/autoload.php';
 }
-require 'CustomEventHandler.php';
+require __DIR__.'/CustomEventHandler.php';
 
 
 $settings = new Settings;
@@ -28,7 +25,7 @@ $settings->getConnection()
 $robot = new Robot(
     path(__DIR__, 'session'),
     $settings,
-    CustomEventHandler::class  // Use a Custom EventHandler
+    CustomEventHandler::class  // Use your Custom EventHandler
 );
 # $robot->setOwner(123456789);
 $robot->setLoopDir(path(__DIR__, 'loops'));
