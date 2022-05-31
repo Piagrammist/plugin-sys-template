@@ -10,14 +10,14 @@ class CustomEventHandler extends BaseEventHandler
      *
      * public function groupsToExecute(array $update, ParamsWrapper $params): array
      * {
-     *   $groups = ['public'];
-     *   if ($params->isOut) {
-     *     $groups []= 'admin';
-     *   } elseif ($params->fromId === static::$owner) {
-     *     $groups []= 'owner';
-     *     $groups []= 'admin';
-     *   }
-     *   return $groups;
+     *     $groups = ['public'];
+     *     if ($params->isOut) {
+     *         $groups []= 'admin';
+     *     } elseif ($params->fromId === static::$owner) {
+     *         $groups []= 'owner';
+     *         $groups []= 'admin';
+     *     }
+     *     return $groups;
      * }
      */
 
