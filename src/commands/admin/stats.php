@@ -7,7 +7,7 @@ use danog\MadelineProto\Settings\Database\Memory as MemoryDatabase;
 use function Amp\File\{getSize, isFile};
 use function Piagrammist\PluginSys\{
     readableBytes,
-    getCpuCores,
+    getCPUCores,
     alignMap,
     path,
 };
@@ -71,7 +71,7 @@ return function (array $update, ParamsWrapper $args, callable $respond) {
         $serverStats = 
             "**Server**\n"
             .alignMap([
-                'CPU cores'             => getCpuCores(),
+                'CPU cores'             => yield from getCPUCores(),
                 'Bot   mem. usage'      => readableBytes(\memory_get_usage()         , $decimals),
                 'Total mem. usage'      => readableBytes(\memory_get_usage(true)     , $decimals),
                 'Bot   peak mem. usage' => readableBytes(\memory_get_peak_usage()    , $decimals),
