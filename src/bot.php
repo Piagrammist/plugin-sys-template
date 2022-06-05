@@ -27,7 +27,8 @@ $robot = new Robot(
     $settings,
     CustomEventHandler::class  // Use your Custom EventHandler
 );
-# $robot->setOwner(123456789);
+$robot->noReport();
+#$robot->setOwner(123456789);
 $robot->setLoopDir(path(__DIR__, 'loops'));
 $robot->setCommandDir(path(__DIR__, 'commands'));
 
